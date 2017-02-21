@@ -14,8 +14,6 @@ import java.net.URL;
 public class HttpRequestHelper {
     private static final String API_KEY = "0ca01e4b23a3fb3304c5a58d32735bda";
     private static final String trackUrl1 = "http://ws.audioscrobbler.com/2.0/?method=track.search&track=";
-    private static final String albumUrl1 = "http://ws.audioscrobbler.com/2.0/?method=album.search&album=";
-    private static final String artistUrl1 = "http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=";
     private static final String generalUrl2 = "&api_key=" + API_KEY + "&format=json";
 
     /** Get the inputstream from the API. */
@@ -24,16 +22,7 @@ public class HttpRequestHelper {
         String result = "";
         String chosenTag = params[0];
 
-        // choose which API to use
-        if (datatype.equals("track")) {
-            completeUrlString = trackUrl1 + chosenTag + generalUrl2;
-        }
-        if (datatype.equals("album")) {
-            completeUrlString = albumUrl1 + chosenTag + generalUrl2;
-        }
-        if (datatype.equals("artist")) {
-            completeUrlString = artistUrl1 + chosenTag + generalUrl2;
-        }
+        completeUrlString = trackUrl1 + chosenTag + generalUrl2;
 
         // make an URL object out of the url string
         URL url = null;

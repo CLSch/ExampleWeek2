@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         etTrack = (EditText) findViewById(R.id.etTrack);
-        assert etTrack != null;
+        assert etTrack != null; // ga uit van domme gerbuikers
         etTrack.setHint("Search for a Track");
     }
 
